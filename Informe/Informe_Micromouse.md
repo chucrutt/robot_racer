@@ -1,8 +1,15 @@
 # Informe Versión Micromouse
 
 ## Diseño Conceptual
+(diseño de micrmouse, ya sea dibujo o modelo 3d)
 
 ### Dimensiones y peso aproximado
+Las dimensiones aproximadas del micromouse son las siguientes:
+- x cm de largo
+- y cm de ancho
+- z cm de altura
+- El peso aproximado del robot es 
+
 ### Inspiración y concepto del robot
 https://github.com/elixir7/Micromouse?tab=readme-ov-file
 
@@ -11,8 +18,14 @@ https://medium.com/analytics-vidhya/mm-sensors-and-motors-7fa3a870db67
 https://deesblog.fyi/getting-started-in-the-micromouse-journey-1/
 
 ### Explicar y justificar de que manera el robot se moverá (tracción simple, tracción doble, movimiento omnidireccional, etc.)
+Para el movimiento del micromouse usaremos un sistema de tracción simple, es decir, tendrá dos ruedas independientes a cada lado que le permitirán avanzar, retroceder y girar sobre su propio eje. Esta configuración no es omnidireccional, pero ofrece un buen control de dirección y velocidad.
+
 ### Explicar y justificar de qué manera el robot percibirá el laberinto y sus paredes
+El micromouse utlizará sensores infrarrojos o sensores ToF para detectar las paredes del laberinto, con esta información y con ayuda de un microcontrolador ejecutaremos un algoritmo (Flood Fill o A* Search) que nos permitirá explorar y trazar el camino más corto hasta la meta.
+
 ### Objetivos del robot (metas realistas para completar competencia robótica)
+Es común para este tipo de competencias tener soluciónes complejas, optimización del camino más corto o eficiente hasta la meta, trazado de diagonales, altas velocidades, etc.
+Sin embargo, al ser nuestra primera versión de micromouse, queremos comenzar con objetivos más realistas, queremos crear un micromouse que sea confiable, que sea capaz de resolver el laberinto en un tiempo razonable, realizar algún tipo de optimización al recorrido (por muy pequeño que sea) y que sea barato de construir.
 
 ## Selección de componentes
 
