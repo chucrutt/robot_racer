@@ -17,6 +17,15 @@ Las dimensiones aproximadas del micromouse son las siguientes:
 
 [Dee's Blog - Getting Started in the Micromouse Journey](https://deesblog.fyi/getting-started-in-the-micromouse-journey-1/)
 
+[Repositorio GitHub - ISmillex/SpeedMicroMouse](https://github.com/ISmillex/SpeedMicroMouse)
+
+[](https://www.researchgate.net/publication/267394680_DISENO_Y_CONSTRUCCION_DE_MICROMOUSE_DE_ALTO_DESEMPENO)
+
+[](https://kswichit.net/micromouse/micromouse.html)
+
+[Peter Harrison - Micromouse Book](https://micromouseonline.com/micromouse-book/introduction/)
+
+
 ### Explicar y justificar de que manera el robot se moverá (tracción simple, tracción doble, movimiento omnidireccional, etc.)
 Para el movimiento del micromouse usaremos un sistema de tracción simple, es decir, tendrá dos ruedas independientes a cada lado que le permitirán avanzar, retroceder y girar sobre su propio eje. Esta configuración no es omnidireccional, pero ofrece un buen control de dirección y velocidad.
 
