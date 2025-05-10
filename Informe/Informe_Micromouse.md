@@ -64,7 +64,7 @@ Usaremos una batería LiPo 2S 7.4V con capacidad suficiente para alimentar los m
 Los sensores son quienes se ancargan de medir las distancias de los muros en torno al micromouse sin que este las toque. Existen principalmente 3 tipos de sensores para medir distancias: ultra-sonido, infrarojos (IR) y tiempo de vuelo (ToF).
 Para decidir qué sensor es mejor usar en el caso de micromouse consideramos 5 parametros: velocidad de respuesta, precisión, rango de distancia, tamaño físico y precio. Considerando que los sensores de ultra-sonido son grandes, voluminosos, más lentos en comparación a los otros dos y de baja precisión a cortas distancias, hemos decidido descartarlo. Por otro lado los sensores infrarojos y de tiempo de vuelo son buenas opciones en general para un micromouse, la principal diferencia entre estos dos es que los sensores ToF miden el tiempo de vuelo de la luz infraroja, y los sensores IR miden la intensidad de la luz infraroja reflejada, por lo que los sensores IR tienen una respuesta más rápida que los ToF pero a un mayor precio.
 
-[VL53L3CX ToF Distance Sensor by Pololu (10mm - 500mm)](https://www.pololu.com/product/3416) Una desventaja de este sensor es que tiene un angulo de vision rasonable (25°) por lo que es necesario tener varios, tiene buena velocidad de respuesta (125Hz) además de estar dentro del rango del voltaje para un micro-controlador Arduino (2.2V - 5.5V) 
+[VL53L4CD ToF Distance Sensor Carrier 1mm-120cm](https://www.pololu.com/product/3692) Fov 18°, 100Hz sample rate, 1mm resolution, consumption 25mA-40mA
 
 [Alternativa IR] (https://www.pololu.com/product/2450 https://www.pololu.com/product/2464)
 
