@@ -58,21 +58,36 @@ Usaremos el módulo MPU-6050 (GY-521), un sensor de giroscopio y acelerómetro d
 ### Bateria
 Usaremos una batería LiPo 2S 7.4V con capacidad suficiente para alimentar los motores, sensores y el microcontrolador por un tiempo adecuado.
 
-[Batería LiPo 2S 7.4V mAh](https://es.aliexpress.com/item/1005008556601041.html)
+[Batería LiPo 2S 7.4V 3000mAh](https://es.aliexpress.com/item/1005008556601041.html)
 
 ### Sensores
 Los sensores son quienes se ancargan de medir las distancias de los muros en torno al micromouse sin que este las toque. Existen principalmente 3 tipos de sensores para medir distancias: ultra-sonido, infrarojos (IR) y tiempo de vuelo (ToF).
 Para decidir qué sensor es mejor usar en el caso de micromouse consideramos 5 parametros: velocidad de respuesta, precisión, rango de distancia, tamaño físico y precio. Considerando que los sensores de ultra-sonido son grandes, voluminosos, más lentos en comparación a los otros dos y de baja precisión a cortas distancias, hemos decidido descartarlo. Por otro lado los sensores infrarojos y de tiempo de vuelo son buenas opciones en general para un micromouse, la principal diferencia entre estos dos es que los sensores ToF miden el tiempo de vuelo de la luz infraroja, y los sensores IR miden la intensidad de la luz infraroja reflejada, por lo que los sensores IR tienen una respuesta más rápida que los ToF pero a un mayor precio.
 
-[VL53L3CX ToF Distance Sensor by Pololu (10mm - 500mm)] (https://www.pololu.com/product/3416)Una desventaja de este sensor es que tiene un angulo de vision rasonable (25°) por lo que es necesario tener varios, tiene buena velocidad de respuesta (125Hz) además de estar dentro del rango del voltaje para un micro-controlador Arduino (2.2V - 5.5V) 
+[VL53L3CX ToF Distance Sensor by Pololu (10mm - 500mm)](https://www.pololu.com/product/3416) Una desventaja de este sensor es que tiene un angulo de vision rasonable (25°) por lo que es necesario tener varios, tiene buena velocidad de respuesta (125Hz) además de estar dentro del rango del voltaje para un micro-controlador Arduino (2.2V - 5.5V) 
 
-[Alternativa IR](https://www.pololu.com/product/2450 https://www.pololu.com/product/2464)
+[Alternativa IR] (https://www.pololu.com/product/2450 https://www.pololu.com/product/2464)
 
 ### Otros
 Buzzer 5V: Para señales acústicas
+
+[Buzzer Pololu 9,2×10,7×4 mm^3 0.8g 70mA](https://www.pololu.com/product/1485)
+
+[Buzzer Pololu 9×9×5,5 mm^3 1g 60mA](https://www.pololu.com/product/1484)
+
 Pulsador: Para iniciar manualmente el robot
+
+[Pulsador MCIElectronics 6,5x6,5x4 mm^3 g 50mA](https://mcielectronics.cl/shop/product/pulsador-9799/)
+
 Regulador de voltaje 5V: Para alimentar el ArduinoNano
+
+[Step-Down Voltage Regulator Pololu 17.8×17.8×8 mm^3 max 2.5A](https://www.pololu.com/product/2858)
+
 Capacitor: Para estabilizar la enería que entrega la batería, especialmente cuando hay picos en el voltaje por cambios bruscos en el consumo.
+
+[Capacitores 200 0.1uF-100uF -10x220uF 10V](https://mcielectronics.cl/shop/product/pack-de-capacitores-electroliticos-200-piezas-mci-electronics-28055/)
+
+[Capacitores 120 1uF-470uF](https://mcielectronics.cl/shop/product/20679/)
 
 ### Lista de piezas necesarias para el robot (tabla)
 - Nombre del periférico o parte
