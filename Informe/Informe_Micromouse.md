@@ -5,10 +5,10 @@
 
 ### Dimensiones y peso aproximado
 Las dimensiones aproximadas del micromouse son las siguientes:
-- x cm de largo
-- y cm de ancho
-- z cm de altura
-- El peso aproximado del robot es 
+- 9.9 cm de largo
+- 9.9 cm de ancho
+- 5 cm de altura
+- El peso aproximado del robot es 200g
 
 ### Inspiración y concepto del robot
 [Repositorio GitHub - elixir7/Micromouse](https://github.com/elixir7/Micromouse?tab=readme-ov-file)
