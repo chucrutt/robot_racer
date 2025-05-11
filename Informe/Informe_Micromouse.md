@@ -53,12 +53,12 @@ Usaremos el módulo MPU-6050 (GY-521), un sensor de giroscopio y acelerómetro d
 [GY-521 MPU-6050](https://mcielectronics.cl/shop/product/modulo-sensor-de-giroscopio-acelerometro-de-3-ejes-gy-521-mpu-6050-compatible-con-arduino-30161/)
 
 ### Driver
-[Dual Motor Driver Pololu](https://www.pololu.com/product/1213)
+[Controlador 2 Motores Dc - Driver Tb6612fng](https://triacs.cl/lamborghino/903-controlador-2-motor-tb6612fng-.html)
 
 ### Bateria
 Usaremos una batería LiPo 2S 7.4V con capacidad suficiente para alimentar los motores, sensores y el microcontrolador por un tiempo adecuado.
 
-[Batería LiPo 2S 7.4V 3000mAh](https://es.aliexpress.com/item/1005008556601041.html)
+[Batería LiPo 2S 7.4V 3000mAh](https://es.aliexpress.com/item/1005002003065955.html)
 
 ### Sensores
 Los sensores son quienes se ancargan de medir las distancias de los muros en torno al micromouse sin que este las toque. Existen principalmente 3 tipos de sensores para medir distancias: ultra-sonido, infrarojos (IR) y tiempo de vuelo (ToF).
@@ -71,9 +71,7 @@ Para decidir qué sensor es mejor usar en el caso de micromouse consideramos 5 p
 ### Otros
 Buzzer 5V: Para señales acústicas
 
-[Buzzer Pololu 9,2×10,7×4 mm^3 0.8g 70mA](https://www.pololu.com/product/1485)
-
-[Buzzer Pololu 9×9×5,5 mm^3 1g 60mA](https://www.pololu.com/product/1484)
+[Buzzer Activo 5V]([https://www.pololu.com/product/1485](https://triacs.cl/modulos/690-buzzer-activo-5v-.html))
 
 Pulsador: Para iniciar manualmente el robot
 
@@ -87,7 +85,7 @@ Capacitor: Para estabilizar la enería que entrega la batería, especialmente cu
 
 [Capacitores 200 0.1uF-100uF -10x220uF 10V](https://mcielectronics.cl/shop/product/pack-de-capacitores-electroliticos-200-piezas-mci-electronics-28055/)
 
-[Capacitores 120 1uF-470uF](https://mcielectronics.cl/shop/product/20679/)
+[Capacitores 300](https://es.aliexpress.com/item/1005001910209320.html)
 
 ### Lista de piezas necesarias para el robot (tabla)
 - Nombre del periférico o parte
