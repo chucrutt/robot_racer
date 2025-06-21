@@ -92,3 +92,12 @@ Capacitor: Para estabilizar la enería que entrega la batería, especialmente cu
 - Descripción
 - Justificación de elección
 - Link a la tienda y precio (máx. $300.000 clp)
+
+
+## Diseño conceptual de programación
+
+### Plan de hitos
+
+### Mapa de estados del robot
+
+### Funciones clave en loop
