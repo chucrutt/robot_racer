@@ -1,16 +1,16 @@
 # Informe Versión Micromouse
 
-## Diseño Conceptual
+# Diseño Conceptual
 (diseño de micrmouse, ya sea dibujo o modelo 3d)
 
-### Dimensiones y peso aproximado
+## Dimensiones y peso aproximado
 Las dimensiones aproximadas del micromouse son las siguientes:
 - 9.9 cm de largo
 - 9.9 cm de ancho
 - 5 cm de altura
 - El peso aproximado del robot es 200g
 
-### Inspiración y concepto del robot
+## Inspiración y concepto del robot
 [Repositorio GitHub - elixir7/Micromouse](https://github.com/elixir7/Micromouse?tab=readme-ov-file)
 
 [MM Sensors and Motors - Medium](https://medium.com/analytics-vidhya/mm-sensors-and-motors-7fa3a870db67)
@@ -26,13 +26,13 @@ Las dimensiones aproximadas del micromouse son las siguientes:
 [Peter Harrison - Micromouse Book](https://micromouseonline.com/micromouse-book/introduction/)
 
 
-### Explicar y justificar de que manera el robot se moverá (tracción simple, tracción doble, movimiento omnidireccional, etc.)
+## Explicar y justificar de que manera el robot se moverá (tracción simple, tracción doble, movimiento omnidireccional, etc.)
 Para el movimiento del micromouse usaremos un sistema de tracción simple, es decir, tendrá dos ruedas independientes a cada lado que le permitirán avanzar, retroceder y girar sobre su propio eje. Esta configuración no es omnidireccional, pero ofrece un buen control de dirección y velocidad.
 
-### Explicar y justificar de qué manera el robot percibirá el laberinto y sus paredes
+## Explicar y justificar de qué manera el robot percibirá el laberinto y sus paredes
 El micromouse utilizará sensores infrarrojos o sensores ToF para detectar las paredes del laberinto. Con esta información y con ayuda de un microcontrolador, ejecutaremos un algoritmo (Flood Fill o A* Search) que nos permitirá explorar y trazar el camino más corto hasta la meta.
 
-### Objetivos del robot (metas realistas para completar competencia robótica)
+## Objetivos del robot (metas realistas para completar competencia robótica)
 Es común en este tipo de competencias tener soluciones complejas, optimización del camino más corto o eficiente hasta la meta, trazado de diagonales, altas velocidades, etc.
 Sin embargo, al ser nuestra primera versión de micromouse, queremos comenzar con objetivos más realistas: crear un robot confiable, capaz de resolver el laberinto en un tiempo razonable, realizar algún tipo de optimización del recorrido (por mínima que sea) y que sea barato de construir.
 
@@ -94,10 +94,35 @@ Capacitor: Para estabilizar la enería que entrega la batería, especialmente cu
 - Link a la tienda y precio (máx. $300.000 clp)
 
 
-## Diseño conceptual de programación
+# Diseño conceptual de programación
 
-### Plan de hitos
+## Plan de hitos
 
-### Mapa de estados del robot
+| Hito 1, Completar el laberinto | Tiempo | Dificultad |
+| :----------------------------- | :----- | :--------- |
+| Leer sensores de distancia     | 1 dia  | +          |
+| Leer acelerometro              | 1 dia  | +          |
+| Calcular movimiento            | 2 dias | ++         |
+| Mover motores                  | 1 dia  | +          |
+| Checkear meta                  | 1 dia  | +          |
 
-### Funciones clave en loop
+| Hito 2, Minimizar el tiempo hasta la meta | Tiempo | Dificultad |
+| :---------------------------------------- | :----- | :--------- |
+| Calcular posicion                         | 2 dias | +          |
+| Calcular laberinto                        | 1 dia  | ++         |
+| Guardar laberinto                         | 2 dias | ++         |
+| Leer laberinto                            | 1 dia  | +          |
+| Calcular secuencia hasta la meta          | 3 dias | +++        |
+| Ejecutar secuencia                        | 1 dia  | +          |
+
+| Bonuses, Explorar vias alternas                 | Tiempo | Dificultad |
+| :---------------------------------------------- | :----- | :--------- |
+| Devolverse hasta primer desvio a lo desconocido | 2 dias | +++        |
+| Explorar 2do camino hasta el inicio             | 3 dias | ++++       |
+
+tiempo total : 21 Dias
+
+
+## Mapa de estados del robot
+
+## Funciones clave en loop
