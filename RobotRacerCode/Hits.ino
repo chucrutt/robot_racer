@@ -2,7 +2,7 @@ int fin = 0;
 
 int l_geo, ll_geo, lll_geo;
 
-int umbral = 830;
+int umbral = 700;
 int geo = 0;
 
 int HL, HR = 0;
@@ -29,7 +29,6 @@ void detectGeo() {
 
   Read_hits();
 
-
   if ((HL == 0) && (HR == 0)) {
     geo = 0;
   }
@@ -48,20 +47,14 @@ void detectGeo() {
 
   if (l_geo != geo) {
 
-
-
-
     if (geo == 0 && l_geo == 2 && ll_geo == 0) {
-
       funcion_HL();
     }
     if (geo == 0 && l_geo == 1 && ll_geo == 0) {
-
       funcion_HR();
     }
 
     if (geo == 0 && ((l_geo == 3) || (ll_geo == 3) || (lll_geo == 3))) {
-
       funcion_Cruce();
     }
     lll_geo = ll_geo;
@@ -71,7 +64,10 @@ void detectGeo() {
 }
 
 void funcion_HL() {
-
+  eval_turn = true;
+  turn_factor = 0;
+  eval_runTime = 0;
+  eval_callTime = millis()
   tone(PINBUZZER, 2000, 50);
 }
 
@@ -81,72 +77,41 @@ void funcion_HR() {
   fin++;
 
   switch (fin) {
-    case 1:
-
-      break;
     case 2:
       delay(50);
-
-
       base = 0;
       Motores(0, 0);
-      while (!digitalRead(PINBOTON)) {
-        change();
-      }
-      tone(PINBUZZER, 2000, 100);
-
+      WaitBoton();
       delay(3000);
-      break;
-    case 3:
-
+      base = velocidad[1];
+      lap++;
       break;
     case 4:
-
       delay(50);
       base = 0;
       Motores(0, 0);
-      while (!digitalRead(PINBOTON)) {
-        change();
-      }
-      tone(PINBUZZER, 2000, 100);
-
+      WaitBoton();
       delay(3000);
-      setSpeed();
-      break;
-    case 5:
-
+      base = velocidad[2];
+      lap++;
       break;
     case 6:
-
-
       delay(50);
       base = 0;
       Motores(0, 0);
-      while (!digitalRead(PINBOTON)) {
-        change();
-      }
-      tone(PINBUZZER, 2000, 100);
-
+      WaitBoton();
       delay(3000);
-      setSpeed();
-      break;
-    case 7:
-
+      base = velocidad[3];
+      lap++;
       break;
     case 8:
-
       delay(50);
       base = 0;
       Motores(0, 0);
-      while (!digitalRead(PINBOTON)) {
-        change();
-      }
-      tone(PINBUZZER, 2000, 100);
-
+      WaitBoton();
       delay(3000);
-      setSpeed();
+      base = velocidad[4];
       break;
-
     default:
       // if nothing else matches, do the default
       // default is optional

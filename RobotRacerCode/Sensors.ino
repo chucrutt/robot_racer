@@ -1,7 +1,7 @@
 int v_s_min[6] = { 1023, 1023, 1023, 1023, 1023, 1023 };
 int v_s_max[6] = { 0, 0, 0, 0, 0, 0 };
 volatile int s_p[6];
-bool online;
+boolean online;
 
 int pos;
 int l_pos;
@@ -9,12 +9,14 @@ int l_pos;
 
 void Sensors_init() {
 
- pinMode(PIN_Sensor_ON, OUTPUT);
+pinMode(PIN_Sensor_ON, OUTPUT);
 
 
 }
 
+
 void calibracion() {
+  digitalWrite(PIN_Sensor_ON, HIGH);
 
   int v_s[6];
 
@@ -26,8 +28,6 @@ void calibracion() {
     v_s[3] = analogRead(A3);
     v_s[4] = analogRead(A2);
     v_s[5] = analogRead(A1);
-
-
 
     for (int i = 0; i < 6; i++) {
       if (v_s[i] < v_s_min[i]) {
@@ -88,6 +88,9 @@ void readSensors() {
   digitalWrite(PIN_Sensor_ON, LOW);
 
 }
+
+
+
 
 int GetPos() {
   readSensors();
