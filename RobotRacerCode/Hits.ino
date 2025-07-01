@@ -2,23 +2,25 @@ int fin = 0;
 
 int l_geo, ll_geo, lll_geo;
 
-int umbral = 700;
+int umbralL = 512;
+int umbralR = 512;
 int geo = 0;
 
 int HL, HR = 0;
 
 void Read_hits() {
 
-  HL = analogRead(A0);
-  HR = analogRead(A7);
+  HL = analogRead(A7);
+  HR = analogRead(A0);
+ //Serial.print(String(HL)+"   "+String(HR)+'\n');
 
-  if (HL > umbral) {
+  if (HL > umbralL) {
     HL = 0;
   } else {
     HL = 1;
   }
 
-  if (HR > umbral) {
+  if (HR > umbralR) {
     HR = 0;
   } else {
     HR = 1;
@@ -44,31 +46,35 @@ void detectGeo() {
   if ((HL == 1) && (HR == 1)) {
     geo = 3;
   }
-
-  if (l_geo != geo) {
-
-    if (geo == 0 && l_geo == 2 && ll_geo == 0) {
-      funcion_HL();
-    }
-    if (geo == 0 && l_geo == 1 && ll_geo == 0) {
-      funcion_HR();
-    }
-
-    if (geo == 0 && ((l_geo == 3) || (ll_geo == 3) || (lll_geo == 3))) {
+ // Serial.print("                                  ");
+ // Serial.println(geo);
+  if (geo == 3 && time-C_call>=eval_time) {
+      //Serial.println("  C");
+      C_call = time;
+      R_call = time;
+      L_call = time;
       funcion_Cruce();
     }
-    lll_geo = ll_geo;
-    ll_geo = l_geo;
-    l_geo = geo;
+  if (geo == 1 && time-L_call>=eval_time) {
+   // Serial.println("L");
+    L_call = time;
+    funcion_HL();
   }
+  if (geo == 2 && time-R_call>=eval_time) {
+   // Serial.println(" R");
+    R_call = time;
+    funcion_HR();
+  }
+
+ 
 }
 
 void funcion_HL() {
   eval_turn = true;
   turn_factor = 0;
   eval_runTime = 0;
-  eval_callTime = millis()
-  tone(PINBUZZER, 2000, 50);
+  eval_callTime = time;
+  tone(PINBUZZER, 5000, 50);
 }
 
 void funcion_HR() {

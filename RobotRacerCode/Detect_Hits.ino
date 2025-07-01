@@ -3,28 +3,33 @@
 #define PINLED 13
 #define PIN_Sensor_ON 11
 
-#define turn_umbral 10
-#define eval_time 200
+#define turn_umbral 500
+#define eval_time 300
 
 
-int velocidad[5] = {94, 80, 100, 120, 150};
-int turnSpeed[5] = {94, 94, 94, 94, 94};
+int velocidad[5] = {100, 105, 110, 115, 120};
+int turnSpeed[5] = {60, 62, 64, 66, 68};
 bool eval_turn = false;
 int turn_factor = 0;
 int eval_runTime = 0;
 int eval_callTime = 0;
+int time = 0;
+int L_call = 0;
+int R_call = 0;
+int C_call = 0;
 int lap = 0;
 
 int posicion_ideal = 0;
 
-float Kprop = 1.0;
-float Kderiv = 11;
+float Kprop = 4;
+float Kderiv = 55;
 
 int base = 0;
 int error_pasado = 0;
 
 
 void setup() {
+ // Serial.begin(9600);
   Peripherals_init();
   TB6612FNG_init();
   Sensors_init();
@@ -40,6 +45,7 @@ void setup() {
   calibracion();
 
 
+
   WaitBoton();
 
   base = velocidad[0];
@@ -48,11 +54,10 @@ void setup() {
 
 
 void loop() {
-
+  time = millis();
   int p = GetPos();
 
   detectGeo();
-
   int error = p - posicion_ideal;
   int d_error = error - error_pasado;
   int correction_power = int(Kprop * error) + int(Kderiv * (d_error));
@@ -68,7 +73,7 @@ void loop() {
 
 
   if(eval_turn){
-    eval_runTime=millis()-eval_callTime;
+    eval_runTime=time-eval_callTime;
     turn_factor += -2*int(bitRead(error,15))+1;
     if(abs(turn_factor) > turn_umbral){
       base = turnSpeed[lap];
