@@ -1,18 +1,15 @@
 int fin = 0;
 
-int l_geo, ll_geo, lll_geo;
-
-int umbralL = 512;
-int umbralR = 512;
-int geo = 0;
+int umbralL = 750;
+int umbralR = 750;
+int geo[6] = {0,0,0,0,0,0};
+int geo_val = -1;
 
 int HL, HR = 0;
 
 void Read_hits() {
-
   HL = analogRead(A7);
   HR = analogRead(A0);
- //Serial.print(String(HL)+"   "+String(HR)+'\n');
 
   if (HL > umbralL) {
     HL = 0;
@@ -32,48 +29,50 @@ void detectGeo() {
   Read_hits();
 
   if ((HL == 0) && (HR == 0)) {
-    geo = 0;
+    geo[0] = 0;
   }
 
   if ((HL == 1) && (HR == 0)) {
-    geo = 1;
+    geo[0] = 1;
   }
 
   if ((HL == 0) && (HR == 1)) {
-    geo = 2;
+    geo[0] = 2;
   }
 
   if ((HL == 1) && (HR == 1)) {
-    geo = 3;
+    geo[0] = 3;
   }
- // Serial.print("                                  ");
- // Serial.println(geo);
-  if (geo == 3 && time-C_call>=eval_time) {
-      //Serial.println("  C");
-      C_call = time;
-      R_call = time;
-      L_call = time;
+  for(int i = 0; i < 5; i++){
+    if(geo[i] == geo[i+1]){
+      val_geo = geo[i];
+    } else {
+      val_geo = -1;
+      i = 5;
+    }
+  }
+  if (millis()-C_call > eval_time && val_geo == 3) {
+      C_call = millis();
       funcion_Cruce();
     }
-  if (geo == 1 && time-L_call>=eval_time) {
-   // Serial.println("L");
-    L_call = time;
+  if (millis()-L_call > eval_time && val_geo == 1) {
+    L_call = millis();
     funcion_HL();
   }
-  if (geo == 2 && time-R_call>=eval_time) {
-   // Serial.println(" R");
-    R_call = time;
+  if (millis()-R_call > eval_time && val_geo == 2) {
+    R_call = millis();
     funcion_HR();
   }
-
- 
+  for (int i = 0; i < 5; i++){
+    geo[i+1] = geo[i];
+  }
 }
 
 void funcion_HL() {
   eval_turn = true;
   turn_factor = 0;
   eval_runTime = 0;
-  eval_callTime = time;
+  eval_callTime = millis();
   tone(PINBUZZER, 5000, 50);
 }
 
@@ -86,37 +85,48 @@ void funcion_HR() {
     case 2:
       delay(50);
       base = 0;
+      lap++;
       Motores(0, 0);
       WaitBoton();
       delay(3000);
       base = velocidad[1];
-      lap++;
       break;
     case 4:
       delay(50);
       base = 0;
+      lap++;
       Motores(0, 0);
       WaitBoton();
       delay(3000);
       base = velocidad[2];
-      lap++;
       break;
     case 6:
       delay(50);
       base = 0;
+      lap++;
       Motores(0, 0);
       WaitBoton();
       delay(3000);
       base = velocidad[3];
-      lap++;
       break;
     case 8:
       delay(50);
       base = 0;
+      lap++;
       Motores(0, 0);
       WaitBoton();
       delay(3000);
       base = velocidad[4];
+      break;
+    case 10:
+      delay(50);
+      base = 0;
+      lap++;
+      Motores(0, 0);
+      tone(PINBUZZER, 5000, 20);
+      delay(20);
+      tone(PINBUZZER, 2000, 20);
+      while(millis()>0){}
       break;
     default:
       // if nothing else matches, do the default
@@ -126,6 +136,5 @@ void funcion_HR() {
 }
 
 void funcion_Cruce() {
-
   tone(PINBUZZER, 2500, 50);
 }
